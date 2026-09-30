@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Authentic Telugu Food | Food Delivered With Love</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#171717;
+    transition:.3s;
+}
+
+body.dark{
+    background:#111;
+    color:#fff;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    width:100%;
+    height:88px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,.06);
+}
+
+.dark .navbar{
+    background:#181818;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ff5a24,#ff9a3d);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+}
+
+.logo-text{
+    font-weight:800;
+    font-size:18px;
+    letter-spacing:1px;
+}
+
+.logo-text span{
+    display:block;
+    font-size:9px;
+    letter-spacing:3px;
+    color:#f45b2a;
+    margin-top:3px;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.search-box{
+    width:55px;
+    height:48px;
+    border:2px solid #f36a3d;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+    overflow:hidden;
+}
+
+.search-box.open{
+    width:250px;
+    justify-content:flex-start;
+    padding:0 15px;
+}
+
+.search-box input{
+    width:0;
+    border:none;
+    outline:none;
+    font-size:15px;
+    transition:.3s;
+    background:transparent;
+}
+
+.search-box.open input{
+    width:200px;
+}
+
+.search-icon{
+    font-size:22px;
+    color:#33446e;
+}
+
+.cart-button{
+    border:0;
+    background:#33446e;
+    color:white;
+    width:50px;
+    height:48px;
+    border-radius:15px;
+    font-size:21px;
+    position:relative;
+}
+
+.cart-count{
+    position:absolute;
+    right:-5px;
+    top:-8px;
+    background:#ff5b27;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    font-size:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.signin{
+    height:48px;
+    padding:0 30px;
+    border:2px solid #f36a3d;
+    border-radius:30px;
+    background:white;
+    color:#33446e;
+    font-size:16px;
+}
+
+.dark .signin{
+    background:#181818;
+    color:white;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    width:88%;
+    max-width:1250px;
+    min-height:390px;
+    margin:45px auto 80px;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,rgba(255,75,15,.95),rgba(255,94,22,.65),rgba(255,94,22,.15)),
+    url("https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1400&q=85");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    padding:50px;
+    color:white;
+    max-width:620px;
+    position:relative;
+    z-index:2;
+}
+
+.hero-small{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:60px;
+    line-height:1.03;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.hero-btn{
+    border:0;
+    padding:15px 28px;
+    border-radius:35px;
+    background:white;
+    color:#555;
+    font-size:17px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+/* floating badge */
+
+.delivery-badge{
+    position:absolute;
+    right:30px;
+    top:25px;
+    background:rgba(255,255,255,.9);
+    padding:14px 20px;
+    border-radius:40px;
+    color:#333;
+    font-weight:bold;
+    animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+    50%{transform:translateY(-8px)}
+}
+
+/* ================= COMMON ================= */
+
+.container{
+    width:88%;
+    max-width:1250px;
+    margin:auto;
+}
+
+.section-title{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.section-description{
+    max-width:760px;
+    font-size:20px;
+    line-height:1.6;
+    color:#777;
+}
+
+.dark .section-description{
+    color:#bbb;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+    display:flex;
+    gap:60px;
+    margin-top:55px;
+    overflow-x:auto;
+    padding-bottom:15px;
+}
+
+.category{
+    min-width:130px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.category:hover{
+    transform:translateY(-8px);
+}
+
+.category.active .category-img{
+    border:5px solid #ff5a25;
+}
+
+.category-img{
+    width:125px;
+    height:125px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid transparent;
+    padding:2px;
+}
+
+.category-name{
+    margin-top:15px;
+    font-size:20px;
+    color:#777;
+}
+
+.dark .category-name{
+    color:#ddd;
+}
+
+/* ================= CRAVING ================= */
+
+.craving{
+    margin-top:75px;
+    padding:40px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#fff3ed,#fff);
+    border:1px solid #eee;
+}
+
+.dark .craving{
+    background:#1b1b1b;
+    border-color:#333;
+}
+
+.craving h2{
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.craving-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.craving-btn{
+    border:1px solid #ddd;
+    background:white;
+    padding:13px 20px;
+    border-radius:30px;
+    font-size:16px;
+    transition:.3s;
+}
+
+.dark .craving-btn{
+    background:#292929;
+    color:white;
+    border-color:#444;
+}
+
+.craving-btn:hover,
+.craving-btn.active{
+    background:#ff5a25;
+    color:white;
+    border-color:#ff5a25;
+}
+
+/* ================= DISHES ================= */
+
+.dishes-section{
+    margin-top:90px;
+    border-top:1px solid #ddd;
+    padding-top:70px;
+}
+
+.dishes{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+    margin-top:40px;
+}
+
+.card{
+    border-radius:25px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 8px 30px rgba(0,0,0,.09);
+    transition:.35s;
+    position:relative;
+}
+
+.dark .card{
+    background:#1d1d1d;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 40px rgba(0,0,0,.16);
+}
+
+.card-image-wrap{
+    height:290px;
+    position:relative;
+    overflow:hidden;
+}
+
+.card-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.card:hover .card-image{
+    transform:scale(1.08);
+}
+
+.add-btn{
+    position:absolute;
+    right:18px;
+    bottom:18px;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    border:0;
+    background:white;
+    color:#111;
+    font-size:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.add-btn:hover{
+    background:#ff5a25;
+    color:white;
+    transform:rotate(90deg);
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.card-title{
+    font-size:25px;
+}
+
+.rating{
+    color:#ff6732;
+    white-space:nowrap;
+}
+
+.card-description{
+    color:#777;
+    margin:15px 0;
+    line-height:1.5;
+}
+
+.dark .card-description{
+    color:#bbb;
+}
+
+.card-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.price{
+    color:#f25227;
+    font-size:27px;
+    font-weight:bold;
+}
+
+.tag{
+    background:#eaf8ee;
+    color:#278548;
+    padding:6px 10px;
+    border-radius:15px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* ================= WHY US ================= */
+
+.why{
+    margin:100px 0;
+    padding:70px 0;
+    background:#f8f8f8;
+}
+
+.dark .why{
+    background:#181818;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-top:45px;
+}
+
+.why-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.dark .why-card{
+    background:#242424;
+}
+
+.why-icon{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.why-card h3{
+    margin-bottom:10px;
+}
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter{
+    width:88%;
+    max-width:1250px;
+    margin:0 auto 80px;
+    padding:60px;
+    border-radius:30px;
+    color:white;
+    background:linear-gradient(135deg,#ff512f,#f09819);
+    text-align:center;
+}
+
+.newsletter h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.newsletter p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.email-box{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    background:white;
+    padding:7px;
+    border-radius:40px;
+}
+
+.email-box input{
+    flex:1;
+    border:0;
+    outline:0;
+    padding:12px 20px;
+    border-radius:30px;
+}
+
+.email-box button{
+    border:0;
+    border-radius:30px;
+    padding:12px 22px;
+    background:#222;
+    color:white;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#151515;
+    color:white;
+    padding:60px 6%;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    margin-bottom:20px;
+}
+
+footer p,
+footer li{
+    color:#aaa;
+    line-height:1.8;
+    list-style:none;
+}
+
+.copyright{
+    border-top:1px solid #333;
+    margin-top:40px;
+    padding-top:25px;
+    color:#888;
+    text-align:center;
+}
+
+/* ================= CART ================= */
+
+.cart-panel{
+    position:fixed;
+    right:-430px;
+    top:0;
+    width:400px;
+    height:100vh;
+    background:white;
+    z-index:3000;
+    box-shadow:-10px 0 40px rgba(0,0,0,.2);
+    transition:.4s;
+    padding:30px;
+}
+
+.dark .cart-panel{
+    background:#181818;
+    color:white;
+}
+
+.cart-panel.open{
+    right:0;
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.close{
+    border:0;
+    background:none;
+    font-size:28px;
+}
+
+.cart-items{
+    max-height:65vh;
+    overflow:auto;
+}
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:15px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.cart-item img{
+    width:65px;
+    height:65px;
+    border-radius:12px;
+    object-fit:cover;
+}
+
+.qty{
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+.qty button{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    border:1px solid #ddd;
+    background:white;
+}
+
+.cart-total{
+    margin-top:25px;
+    display:flex;
+    justify-content:space-between;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.checkout{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:0;
+    background:#ff5a25;
+    color:white;
+    border-radius:30px;
+    font-size:17px;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:2500;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    background:white;
+    max-width:700px;
+    width:100%;
+    border-radius:25px;
+    overflow:hidden;
+    position:relative;
+}
+
+.dark .modal-box{
+    background:#1d1d1d;
+    color:white;
+}
+
+.modal-image{
+    width:100%;
+    height:330px;
+    object-fit:cover;
+}
+
+.modal-content{
+    padding:30px;
+}
+
+.modal-close{
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:40px;
+    height:40px;
+    border:0;
+    border-radius:50%;
+    background:white;
+    font-size:20px;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%) translateY(100px);
+    background:#222;
+    color:white;
+    padding:15px 25px;
+    border-radius:30px;
+    z-index:5000;
+    opacity:0;
+    transition:.4s;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+
+/* ================= DARK MODE ================= */
+
+.theme{
+    width:45px;
+    height:45px;
+    border:1px solid #ddd;
+    border-radius:50%;
+    background:white;
+    font-size:19px;
+}
+
+.dark .theme{
+    background:#222;
+    color:white;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .navbar{
+        padding:0 4%;
+    }
+
+    .signin{
+        padding:0 18px;
+    }
+
+    .hero{
+        min-height:350px;
+        margin-top:25px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .dishes{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        height:78px;
+    }
+
+    .logo-text{
+        display:none;
+    }
+
+    .nav-right{
+        gap:8px;
+    }
+
+    .search-box.open{
+        position:absolute;
+        left:20px;
+        right:20px;
+        width:auto;
+        background:white;
+        z-index:10;
+    }
+
+    .hero{
+        width:90%;
+        min-height:275px;
+        margin:30px auto 65px;
+        background-position:center;
+    }
+
+    .hero-content{
+        padding:28px;
+    }
+
+    .hero-small{
+        font-size:11px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        display:none;
+    }
+
+    .delivery-badge{
+        display:none;
+    }
+
+    .section-title{
+        font-size:40px;
+    }
+
+    .section-description{
+        font-size:17px;
+    }
+
+    .categories{
+        gap:30px;
+    }
+
+    .category-img{
+        width:100px;
+        height:100px;
+    }
+
+    .craving{
+        padding:25px;
+    }
+
+    .dishes{
+        grid-template-columns:1fr;
+    }
+
+    .card-image-wrap{
+        height:310px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .newsletter{
+        padding:40px 20px;
+    }
+
+    .newsletter h2{
+        font-size:30px;
+    }
+
+    .email-box{
+        flex-direction:column;
+        gap:5px;
+        border-radius:20px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cart-panel{
+        width:100%;
+        right:-100%;
+    }
+
+    .signin{
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">🍴</div>
+
+        <div class="logo-text">
+            Authentic
+            <span>Telugu Food</span>
+        </div>
+    </div>
+
+    <div class="nav-right">
+
+        <div class="search-box" id="searchBox">
+            <span class="search-icon" onclick="openSearch()">⌕</span>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search food..."
+                oninput="searchFood()"
+            >
+        </div>
+
+        <button class="theme" onclick="toggleDark()">
+            🌙
+        </button>
+
+        <button class="cart-button" onclick="openCart()">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="signin">
+            Sign In
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            Authentic Telugu Food • FRESH EVERY DAY
+        </div>
+
+        <h1>
+            Order your<br>
+            favourite food<br>
+            here.
+        </h1>
+
+        <p>
+            Delicious food, carefully prepared and
+            delivered with love to your doorstep.
+        </p>
+
+        <button class="hero-btn" onclick="scrollToMenu()">
+            View Menu →
+        </button>
+
+    </div>
+
+    <div class="delivery-badge">
+        ⚡ Fast delivery
+    </div>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<main class="container">
+
+    <h2 class="section-title">
+        Explore our menu
+    </h2>
+
+    <p class="section-description">
+        Choose from a diverse menu featuring a delightful array
+        of dishes. Our mission is to satisfy your cravings and
+        elevate your dining experience, one delicious meal at a time.
+    </p>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <div class="category active" onclick="filterCategory('all',this)">
+            <img class="category-img"
+            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80">
+            <div class="category-name">All</div>
+        </div>
+
+        <div class="category" onclick="filterCategory('salad',this)">
+            <img class="category-img"
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80">
+            <div class="category-name">Salad</div>
+        </div>
+
+        <div class="category" onclick="filterCategory('rolls',this)">
+            <img class="category-img"
+            src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=400&q=80">
+            <div class="category-name">Rolls</div>
+        </div>
+
+        <div class="category" onclick="filterCategory('pizza',this)">
+            <img class="category-img"
+            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80">
+            <div class="category-name">Pizza</div>
+        </div>
+
+        <div class="category" onclick="filterCategory('burger',this)">
+            <img class="category-img"
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80">
+            <div class="category-name">Burgers</div>
+        </div>
+
+        <div class="category" onclick="filterCategory('dessert',this)">
+            <img class="category-img"
+            src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=400&q=80">
+            <div class="category-name">Desserts</div>
+        </div>
+
+    </div>
+
+
+    <!-- ================= CRAVINGS ================= -->
+
+    <section class="craving">
+
+        <h2>
+            What are you craving today? 😋
+        </h2>
+
+        <div class="craving-buttons">
+
+            <button class="craving-btn"
+            onclick="craving('spicy',this)">
+                🌶️ Spicy
+            </button>
+
+            <button class="craving-btn"
+            onclick="craving('healthy',this)">
+                🥗 Healthy
+            </button>
+
+            <button class="craving-btn"
+            onclick="craving('quick',this)">
+                ⚡ Quick
+            </button>
+
+            <button class="craving-btn"
+            onclick="craving('sweet',this)">
+                🍰 Sweet
+            </button>
+
+            <button class="craving-btn"
+            onclick="showAll()">
+                ✨ Show all
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DISHES ================= -->
+
+    <section class="dishes-section" id="menu">
+
+        <h2 class="section-title">
+            Top dishes near you
+        </h2>
+
+        <p class="section-description">
+            Hand-picked favourites prepared fresh for you.
+        </p>
+
+        <div class="dishes" id="dishes"></div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= WHY US ================= -->
+
+<section class="why">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Why choose Authentic Telugu Food?
+        </h2>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <div class="why-icon">🥬</div>
+                <h3>Fresh Ingredients</h3>
+                <p>
+                    Fresh ingredients selected carefully
+                    for every dish.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">👨‍🍳</div>
+                <h3>Made With Love</h3>
+                <p>
+                    Every meal is prepared with attention
+                    and care.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">⚡</div>
+                <h3>Fast Delivery</h3>
+                <p>
+                    Hot and delicious food delivered quickly.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">❤️</div>
+                <h3>Happy Customers</h3>
+                <p>
+                    Your happiness is our biggest motivation.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+    <h2>
+        Get delicious updates 🍽️
+    </h2>
+
+    <p>
+        Subscribe and never miss our latest dishes and offers.
+    </p>
+
+    <div class="email-box">
+
+        <input
+            type="email"
+            placeholder="Enter your email"
+            id="email"
+        >
+
+        <button onclick="subscribe()">
+            Subscribe
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>🍴 Authentic Telugu Food</h3>
+
+            <p>
+                Delicious food made with love.
+                Your cravings, our responsibility.
+            </p>
+        </div>
+
+        <div>
+            <h3>Explore</h3>
+
+            <ul>
+                <li>Home</li>
+                <li>Menu</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Services</h3>
+
+            <ul>
+                <li>Food Delivery</li>
+                <li>Takeaway</li>
+                <li>Catering</li>
+                <li>Events</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+
+            <p>📍 Hyderabad, India</p>
+            <p>📞 +91 98765 43210</p>
+            <p>✉️ hello@Authentic Telugu Food.com</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Authentic Telugu Food • Crafted with ❤️
+    </div>
+
+</footer>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-panel" id="cartPanel">
+
+    <div class="cart-header">
+
+        <h2>
+            Your Cart 🛒
+        </h2>
+
+        <button class="close" onclick="closeCart()">
+            ×
+        </button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems">
+        <p>Your cart is empty.</p>
+    </div>
+
+    <div class="cart-total">
+
+        <span>Total</span>
+
+        <span id="cartTotal">
+            ₹0
+        </span>
+
+    </div>
+
+    <button class="checkout" onclick="checkout()">
+        Proceed to Checkout →
+    </button>
+
+</div>
+
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <button class="modal-close" onclick="closeModal()">
+            ×
+        </button>
+
+        <img id="modalImage" class="modal-image">
+
+        <div class="modal-content">
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalDescription"></p>
+
+            <br>
+
+            <p>
+                ⭐⭐⭐⭐⭐ &nbsp; Excellent choice
+            </p>
+
+            <br>
+
+            <h2 id="modalPrice"></h2>
+
+            <br>
+
+            <button class="checkout"
+            id="modalAdd">
+                Add to cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+    Added to cart ✓
+</div>
+
+
+<script>
+
+/* ================= FOOD DATA ================= */
+
+const foods = [
+
+{
+id:1,
+name:"Clover Salad",
+category:"salad",
+price:16,
+rating:"★★★★☆",
+description:"Crunchy greens with seasonal veggies and a mild tangy dressing.",
+image:"https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=85",
+tags:["healthy","quick"]
+},
+
+{
+id:2,
+name:"Grilled Paneer Salad",
+category:"salad",
+price:18,
+rating:"★★★★★",
+description:"Fresh vegetables topped with perfectly grilled paneer.",
+image:"https://images.unsplash.com/photo-1546069901-eacef0df6022?auto=format&fit=crop&w=900&q=85",
+tags:["healthy","quick"]
+},
+
+{
+id:3,
+name:"Fresh Veg Roll",
+category:"rolls",
+price:12,
+rating:"★★★★☆",
+description:"Crispy vegetables wrapped in a soft and delicious roll.",
+image:"https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=85",
+tags:["quick","spicy"]
+},
+
+{
+id:4,
+name:"Spicy Paneer Roll",
+category:"rolls",
+price:15,
+rating:"★★★★★",
+description:"Hot and spicy paneer wrapped with fresh vegetables.",
+image:"https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=900&q=85",
+tags:["spicy","quick"]
+},
+
+{
+id:5,
+name:"Farmhouse Pizza",
+category:"pizza",
+price:20,
+rating:"★★★★★",
+description:"Loaded with fresh vegetables and melted cheese.",
+image:"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85",
+tags:["spicy"]
+},
+
+{
+id:6,
+name:"Classic Burger",
+category:"burger",
+price:18,
+rating:"★★★★☆",
+description:"Juicy burger with fresh vegetables and signature sauce.",
+image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85",
+tags:["quick"]
+},
+
+{
+id:7,
+name:"Chocolate Dessert",
+category:"dessert",
+price:14,
+rating:"★★★★★",
+description:"Rich chocolate dessert for the perfect sweet ending.",
+image:"https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85",
+tags:["sweet"]
+},
+
+{
+id:8,
+name:"Berry Waffle",
+category:"dessert",
+price:16,
+rating:"★★★★★",
+description:"Crispy waffle topped with fresh berries and cream.",
+image:"https://images.unsplash.com/photo-1562376552-0d160a2f2387?auto=format&fit=crop&w=900&q=85",
+tags:["sweet"]
+}
+
+];
+
+
+/* ================= CART ================= */
+
+let cart = [];
+
+
+/* ================= DISPLAY ================= */
+
+function displayFoods(list){
+
+    const container =
+        document.getElementById("dishes");
+
+    container.innerHTML="";
+
+    if(list.length===0){
+
+        container.innerHTML=`
+            <h3 style="grid-column:1/-1;text-align:center;padding:50px">
+                😔 No dishes found
+            </h3>
+        `;
+
+        return;
+    }
+
+    list.forEach(food=>{
+
+        container.innerHTML += `
+
+        <div class="card">
+
+            <div class="card-image-wrap">
+
+                <img
+                    class="card-image"
+                    src="${food.image}"
+                    onclick="openFood(${food.id})"
+                >
+
+                <button
+                    class="add-btn"
+                    onclick="addToCart(${food.id})"
+                >
+                    +
+                </button>
+
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-top">
+
+                    <h3 class="card-title">
+                        ${food.name}
+                    </h3>
+
+                    <span class="rating">
+                        ${food.rating}
+                    </span>
+
+                </div>
+
+                <p class="card-description">
+                    ${food.description}
+                </p>
+
+                <div class="card-bottom">
+
+                    <span class="price">
+                        ₹${food.price}
+                    </span>
+
+                    <span class="tag">
+                        VEG
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* ================= CATEGORY ================= */
+
+function filterCategory(category,element){
+
+    document.querySelectorAll(".category")
+    .forEach(c=>c.classList.remove("active"));
+
+    element.classList.add("active");
+
+    if(category==="all"){
+
+        displayFoods(foods);
+
+    }else{
+
+        displayFoods(
+            foods.filter(
+                food=>food.category===category
+            )
+        );
+
+    }
+
+}
+
+
+/* ================= CRAVING ================= */
+
+function craving(type,element){
+
+    document.querySelectorAll(".craving-btn")
+    .forEach(b=>b.classList.remove("active"));
+
+    element.classList.add("active");
+
+    displayFoods(
+        foods.filter(
+            food=>food.tags.includes(type)
+        )
+    );
+
+}
+
+
+function showAll(){
+
+    document.querySelectorAll(".craving-btn")
+    .forEach(b=>b.classList.remove("active"));
+
+    displayFoods(foods);
+
+}
+
+
+/* ================= SEARCH ================= */
+
+function openSearch(){
+
+    const box=document.getElementById("searchBox");
+
+    box.classList.toggle("open");
+
+    if(box.classList.contains("open")){
+        document.getElementById("searchInput").focus();
+    }
+
+}
+
+
+function searchFood(){
+
+    const query=
+        document.getElementById("searchInput")
+        .value.toLowerCase();
+
+    const result=foods.filter(food=>
+
+        food.name.toLowerCase().includes(query) ||
+
+        food.category.toLowerCase().includes(query) ||
+
+        food.description.toLowerCase().includes(query)
+
+    );
+
+    displayFoods(result);
+
+}
+
+
+/* ================= ADD CART ================= */
+
+function addToCart(id){
+
+    const food=foods.find(f=>f.id===id);
+
+    const existing=
+        cart.find(item=>item.id===id);
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+            ...food,
+            quantity:1
+        });
+
+    }
+
+    updateCart();
+
+    showToast(food.name+" added to cart ✓");
+
+}
+
+
+/* ================= UPDATE CART ================= */
+
+function updateCart(){
+
+    document.getElementById("cartCount")
+    .textContent=
+    cart.reduce(
+        (total,item)=>total+item.quantity,
+        0
+    );
+
+
+    const container=
+        document.getElementById("cartItems");
+
+    if(cart.length===0){
+
+        container.innerHTML=
+        "<p>Your cart is empty.</p>";
+
+        document.getElementById("cartTotal")
+        .textContent="₹0";
+
+        return;
+    }
+
+
+    container.innerHTML="";
+
+    let total=0;
+
+
+    cart.forEach(item=>{
+
+        total +=
+            item.price*item.quantity;
+
+
+        container.innerHTML += `
+
+        <div class="cart-item">
+
+            <img src="${item.image}">
+
+            <div style="flex:1">
+
+                <strong>
+                    ${item.name}
+                </strong>
+
+                <div>
+                    ₹${item.price}
+                </div>
+
+            </div>
+
+            <div class="qty">
+
+                <button
+                onclick="changeQty(${item.id},-1)">
+                    -
+                </button>
+
+                <span>
+                    ${item.quantity}
+                </span>
+
+                <button
+                onclick="changeQty(${item.id},1)">
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+
+    document.getElementById("cartTotal")
+    .textContent="₹"+total;
+
+}
+
+
+function changeQty(id,amount){
+
+    const item=cart.find(i=>i.id===id);
+
+    if(!item) return;
+
+    item.quantity+=amount;
+
+    if(item.quantity<=0){
+
+        cart=cart.filter(i=>i.id!==id);
+
+    }
+
+    updateCart();
+
+}
+
+
+/* ================= CART PANEL ================= */
+
+function openCart(){
+
+    document
+    .getElementById("cartPanel")
+    .classList.add("open");
+
+}
+
+
+function closeCart(){
+
+    document
+    .getElementById("cartPanel")
+    .classList.remove("open");
+
+}
+
+
+/* ================= FOOD MODAL ================= */
+
+function openFood(id){
+
+    const food=foods.find(f=>f.id===id);
+
+    document.getElementById("modalImage")
+    .src=food.image;
+
+    document.getElementById("modalTitle")
+    .textContent=food.name;
+
+    document.getElementById("modalDescription")
+    .textContent=food.description;
+
+    document.getElementById("modalPrice")
+    .textContent="₹"+food.price;
+
+    document.getElementById("modalAdd")
+    .onclick=()=>{
+        addToCart(food.id);
+        closeModal();
+    };
+
+    document
+    .getElementById("modal")
+    .classList.add("show");
+
+}
+
+
+function closeModal(){
+
+    document
+    .getElementById("modal")
+    .classList.remove("show");
+
+}
+
+
+/* ================= DARK MODE ================= */
+
+function toggleDark(){
+
+    document.body.classList.toggle("dark");
+
+}
+
+
+/* ================= TOAST ================= */
+
+function showToast(message){
+
+    const toast=
+        document.getElementById("toast");
+
+    toast.textContent=message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },2200);
+
+}
+
+
+/* ================= SUBSCRIBE ================= */
+
+function subscribe(){
+
+    const email=
+        document.getElementById("email").value;
+
+    if(email.trim()===""){
+
+        showToast("Please enter your email");
+
+        return;
+    }
+
+    showToast("Thanks for subscribing ❤️");
+
+    document.getElementById("email").value="";
+
+}
+
+
+/* ================= CHECKOUT ================= */
+
+function checkout(){
+
+    if(cart.length===0){
+
+        showToast("Your cart is empty");
+
+        return;
+    }
+
+    showToast("Checkout feature coming soon 🚀");
+
+}
+
+
+/* ================= SCROLL ================= */
+
+function scrollToMenu(){
+
+    document
+    .getElementById("menu")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ================= INITIAL LOAD ================= */
+
+displayFoods(foods);
+
+</script>
+
+</body>
+</html>
